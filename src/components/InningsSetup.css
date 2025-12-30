@@ -1,0 +1,31 @@
+.setup-container,
+.innings-setup-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  margin-bottom: 8px;
+}
+button {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background: #0250a3;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #017dc1;
+}

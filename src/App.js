@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MatchSetup from './components/MatchSetup';
+import TossSelection from './components/TossSelection';
+import InningsSetup from './components/InningsSetup';
+import ScoreBoard from './components/ScoreBoard';
+import MatchHistory from './components/MatchHistory';
+import './index.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MatchSetup />} />
+        <Route path="/toss" element={<TossSelection />} />
+        <Route path="/innings-setup" element={<InningsSetup />} />
+        <Route path="/score" element={<ScoreBoard />} />
+        <Route path="/history" element={<MatchHistory />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

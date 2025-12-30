@@ -1,0 +1,248 @@
+/* --- Base Structure and Typography --- */
+.scoreboard {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Keeps the scoreboard narrow for mobile/widget view */
+    max-width: 400px; 
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+/* --- Main Score Panel (Most Compact Section) --- */
+.score-main-panel {
+    background-color: #f0f0f0; /* Very light gray header background */
+    color: #333333;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.score-main-panel > div:first-child {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-row {
+    display: flex;
+    align-items: baseline;
+    /* Use space-between for maximum horizontal separation without excessive padding */
+    justify-content: space-between; 
+    padding: 2px 0;
+}
+
+.score-large {
+    font-size: 2.2rem; /* Compact score size */
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-aux {
+    font-size: 0.95rem; /* Smaller overs size */
+    font-weight: 400;
+    color: #555555;
+    margin-left: 5px; /* Minimal separation */
+}
+
+.crr-num {
+    font-size: 1.1rem; /* Compact CRR size */
+    font-weight: 600;
+    color: #007bff; /* Accent color for CRR */
+}
+
+.free-hit {
+    background-color: #ffcc00; 
+    color: #333333;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* --- Tables (Batsmen & Bowler) --- */
+.bat-table {
+    width: 100%;
+    border-collapse: collapse; /* Use collapse for tighter table layout */
+    margin-bottom: 12px;
+}
+
+.bat-table th, .bat-table td {
+    padding: 6px 4px; /* Reduced padding for compactness */
+    text-align: right;
+    font-size: 0.8rem; /* Smallest readable font size */
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.bat-table th {
+    background-color: #f9f9f9; 
+    color: #777777;
+    font-weight: 600;
+    text-align: right;
+    border-bottom: 1px solid #dddddd;
+}
+
+.bat-table th:first-child, .bat-table td:first-child {
+    text-align: left;
+    padding-left: 8px;
+    font-weight: 500;
+}
+.bat-table td:first-child {
+    color: #333333;
+}
+
+/* Bowler Stats in TFOOT */
+.bat-table tfoot td {
+    background-color: #f9f9f9; 
+    font-weight: 600;
+    border-top: 1px solid #dddddd;
+    font-size: 0.85rem;
+}
+.bat-table tfoot tr:first-child th {
+    background-color: #e9e9e9;
+    color: #555555;
+    border-top: none;
+}
+
+/* --- Over Panel (Last 6 Balls) --- */
+.over-panel {
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+}
+
+.over-panel span {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* --- Extras Checkboxes (Tighter Layout) --- */
+.extras-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Use space-between to spread them evenly */
+    gap: 5px 10px; /* Reduced gap */
+    padding: 8px 5px;
+    margin-bottom: 15px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.extras-row label {
+    font-size: 0.75rem; /* Very small font for checkboxes */
+    font-weight: 500;
+    color: #555555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.extras-row input[type="checkbox"] {
+    margin-right: 3px;
+    transform: scale(0.9); /* Slightly smaller checkboxes */
+}
+
+/* ------------------------------------------------ */
+/* --- Control Buttons (Retire) - UPDATED --- */
+/* ------------------------------------------------ */
+.control-buttons-row {
+    /* Since there is only one button, this wrapper can just center or use full width */
+    display: flex;
+    justify-content: center; /* Center the single button */
+    margin: 0 5px 10px 5px;
+    gap: 8px; /* Maintain gap property even if not used */
+}
+
+.action-btn {
+    /* Apply styles for the Retire button */
+    flex-grow: 1; /* Allow it to grow to fill the space */
+    max-width: 100%; /* Ensure it respects parent container width */
+    padding: 8px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    background-color: #dc3545; /* Changed to Red for 'Retire' action */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------ */
+/* --- Keypad & Side Buttons (Undo, Partnerships, Extras) --- */
+/* ------------------------------------------------ */
+
+.keypad-container {
+    display: flex;
+    gap: 10px; /* Reduced gap */
+    margin: 0 5px 15px 5px; /* Minimal side margin */
+}
+
+.side-buttons {
+    /* This container now holds 4 buttons vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Reduced gap to fit 4 buttons comfortably */
+    width: 25%; 
+    justify-content: space-between; /* Distribute vertical space */
+}
+
+.side-btn {
+    /* Adjusted padding for 4 buttons to fit */
+    padding: 6px 2px; 
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    background-color: #007bff; /* Neutral Blue for Side Actions */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.keypad-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px; /* Reduced gap */
+    width: 75%; 
+}
+
+.run-btn {
+    /* Keep circular look */
+    width: 100%; /* Changed to 100% to fill grid cell */
+    aspect-ratio: 1 / 1; 
+    padding: 0;
+    font-size: 1rem; 
+    font-weight: 600;
+    color: #131212;
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s;
+}
+
+/* --- Full Stats Button --- */
+.scoreboard > button {
+    display: block;
+    width: calc(100% - 10px); 
+    margin: 10px auto 15px auto;
+    background-color: #e9ecef;
+    color: #495057; 
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}

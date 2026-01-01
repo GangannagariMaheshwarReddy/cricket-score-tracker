@@ -1,4 +1,4 @@
-# 🏏 Cricket Scorer (Offline)
+# 🏏 Cricket Scorer (Offline)!!!
 📌 Project Description
 
 Cricket Scorer is an offline cricket scoring application inspired by Cricbuzz.
